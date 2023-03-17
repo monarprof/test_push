@@ -1,0 +1,22 @@
+#!/bin/bash/
+
+if [ -d .git ]; then
+    git config user.name monarprof
+    git config user.email monarprof@gamil.com
+    git add $(pwd)
+    git pull
+    git commit -m $1 
+    git push 
+else 
+echo "error not a git repository"
+echo "currently in : $pwd"
+read -p "what repository are you looking for?" repo_name
+dir=$(find / -type d -name repo_name)
+cd $dir
+git config user.name monarprof
+    git config user.email monarprof@gmail.com
+    git add $(pwd)
+    git pull
+    git commit -m $1 
+    git push 
+    fi
